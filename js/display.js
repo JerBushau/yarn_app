@@ -2,11 +2,14 @@
 
 function Display(x, title) {
 	   this.num = x;
-	 this.title = title;
+	 this.title = title.replace(/\s+/g, '-');
 	   this.row = new Counter();
 	this.stitch = new Counter();
-	  this.html = `
-	<div class="widgetContainer${this.num}">
+	   this.tabLinkHtml = `
+    	<a class="dropdown-item" data-toggle="tab" href="#${this.title}${this.num}" 
+    	role="tab">${title}</a>`; 
+	this.tabContentHtml = ` 
+	<div class="widgetContainer${this.num} tab-pane fade" id="${this.title}${this.num}" role="tabpanel">
 		<h1>${title}</h1>
 		<section class="row">
 			<h1 class="title">row</h1>
@@ -34,10 +37,12 @@ function Display(x, title) {
 }
 
 Display.prototype.render = function() {
-	let mainContainer = document.getElementById('mainContainer')
+	let mainContainer = document.getElementById('mainContainer');
+	let           nav = document.getElementById('nav');
 	let    widgetCons = mainContainer.getElementsByClassName('widgetContainer' + this.num);
 
-	mainContainer.insertAdjacentHTML('beforeend', this.html);
+	nav.insertAdjacentHTML('beforeend', this.tabLinkHtml);
+	mainContainer.insertAdjacentHTML('beforeend', this.tabContentHtml);
 
 	for (let i = 0; i < widgetCons.length; i++) {
 		this.bindButtons(widgetCons[i], 'row');

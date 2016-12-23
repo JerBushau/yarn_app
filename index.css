@@ -17,8 +17,13 @@ section {
 	margin: auto;
 }
 
+.tab-pane {
+	width: 100%;
+}
+
 div[class^="widgetContainer"] {
 	width: 100%;
+	margin: 1em;
 }
 
 .title {
