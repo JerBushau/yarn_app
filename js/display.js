@@ -1,13 +1,13 @@
 'use strict'
 
 function Display(x, title) {
-	   this.num = x;
-	 this.title = title.replace(/\s+/g, '-');
-	   this.row = new Counter();
+	this.num = x;
+	this.title = title.replace(/\s+/g, '-');
+	this.row = new Counter();
 	this.stitch = new Counter();
-	   this.tabLinkHtml = `
-    	<a class="dropdown-item" data-toggle="tab" href="#${this.title}${this.num}" 
-    	role="tab">${title}</a>`; 
+	this.tabLinkHtml = `
+	<a class="dropdown-item" data-toggle="tab" href="#${this.title}${this.num}" 
+	role="tab">${title}</a>`; 
 	this.tabContentHtml = ` 
 	<div class="widgetContainer${this.num} tab-pane fade" id="${this.title}${this.num}" role="tabpanel">
 		<h1>${title}</h1>
@@ -38,8 +38,8 @@ function Display(x, title) {
 
 Display.prototype.render = function() {
 	let mainContainer = document.getElementById('mainContainer');
-	let           nav = document.getElementById('nav');
-	let    widgetCons = mainContainer.getElementsByClassName('widgetContainer' + this.num);
+	let nav = document.getElementById('nav');
+	let widgetCons = mainContainer.getElementsByClassName('widgetContainer' + this.num);
 
 	nav.insertAdjacentHTML('beforeend', this.tabLinkHtml);
 	mainContainer.insertAdjacentHTML('beforeend', this.tabContentHtml);
@@ -51,12 +51,11 @@ Display.prototype.render = function() {
 }
 
 Display.prototype.bindButtons = function(el, pre) {
-	let   main = el.querySelector('section.' + pre);
-	let     up = main.querySelector('button.' + pre + 'Up');
-	let   down = main.querySelector('button.'+ pre +'Down');
-	let  clear = main.querySelector('button.' + pre + 'Clear');
-	let number = main.querySelector('div.' + pre + 'Number')
-
+	let main = el.querySelector('section.' + pre);
+	let up = main.querySelector('button.' + pre + 'Up');
+	let down = main.querySelector('button.'+ pre +'Down');
+	let clear = main.querySelector('button.' + pre + 'Clear');
+	let number = main.querySelector('div.' + pre + 'Number');
 
 	switch(pre) {
 		case 'row':

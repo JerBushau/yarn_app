@@ -10,16 +10,14 @@ $('.nav-pills').on('shown.bs.tab', 'a', function(e) {
 document.getElementById('addProjectButton').onclick = function(e) {
 	let addInput = document.getElementById('addProjectInput');
 	let title = addInput.value;
-	let     n = 1;
-	let     a = new Display(n, title);
+	let n = 1;
+	let a = new Display(n, title);
 
 	e.preventDefault();
 
 	a.render();
+	
 	n++;
 
 	addInput.value = '';
 };
-
-
-
