@@ -12,10 +12,10 @@
 
 	<ul class="nav nav-pills" role="tablist">
 		<li class="nav-item">
-			<a class="nav-link active in" href="#addProject" data-toggle="pill">Add Project</a>
+			<a class="nav-link active in" href="#addProject" data-toggle="pill">Create</a>
 		</li>
 		<li class="nav-item dropdown">
-			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
+			<a id="drpdwn" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
 			
 			<div id="nav" class="dropdown-menu">
 			</div>
@@ -24,11 +24,12 @@
 
 	<div id="mainContainer" class="tab-content">
 		<div id="addProject" class="tab-pane fade in active" role="tabpanel">
+			<h1>Create a Project!</h1>
 			<form>
 				<div class="input-group">
 			      <input id="addProjectInput" type="text" class="form-control" placeholder="Enter project name...">
 			      <span class="input-group-btn">
-			        <a id="addProjectButton" class="btn btn-secondary" type="button">submit</a>
+			        <button id="addProjectButton" class="btn btn-secondary" type="button">submit</button>
 			      </span>
 			    </div>
 			</form>

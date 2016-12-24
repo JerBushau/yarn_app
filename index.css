@@ -10,12 +10,13 @@ section {
 #mainContainer {
 	display: flex;
 	background: #E6C5FD;
-	height: 90%;
+	height: 92%;
 	font-family: 'Sofia', cursive;
 	color: #5806c3;
 	max-width: 100%;
 	margin: auto;
 	align-items: center;
+	text-align: center;
 }
 
 .tab-pane {
@@ -32,6 +33,25 @@ div[class^="widgetContainer"] {
 	display: inline-flex;
 	font-size: 2em;
 	margin: 0;
+}
+
+.dropdown-item.active, .dropdown-item.active:focus, .dropdown-item.active:hover {
+	background-color: #c67bfa;
+}
+
+a,
+a:hover {
+	color: #5806c3;
+	/*font-family: 'Sofia', cursive;*/
+}
+
+.nav-pills .nav-item.open .nav-link, .nav-pills .nav-item.open .nav-link:focus, .nav-pills .nav-item.open .nav-link:hover, .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link.active:hover {
+	background-color: #c67bfa;
+}
+
+.input-group {
+	width: 75%;
+	margin: auto;
 }
 
 .clear {
@@ -77,4 +97,8 @@ div[class^="widgetContainer"] {
 }
 .arrow:focus {
 	outline: 0;
+}
+
+#drpdwn {
+	display: none;
 }
