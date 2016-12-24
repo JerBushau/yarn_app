@@ -10,11 +10,12 @@ section {
 #mainContainer {
 	display: flex;
 	background: #E6C5FD;
-	max-height: 100%;
+	height: 90%;
 	font-family: 'Sofia', cursive;
 	color: #5806c3;
 	max-width: 100%;
 	margin: auto;
+	align-items: center;
 }
 
 .tab-pane {

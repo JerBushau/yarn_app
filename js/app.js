@@ -1,23 +1,25 @@
 'use strict'
 
-// bootstrap dropdown workaround
-$(document).ready(function() {
-    $('.nav-pills').on('shown.bs.tab', 'a', function(e) {
-        console.log(e.relatedTarget);
-        if (e.relatedTarget) {
-            $(e.relatedTarget).removeClass('active');
-        }
-    });    
-});
+// bootstrap dropdown active class bug workaround
+$('.nav-pills').on('shown.bs.tab', 'a', function(e) {
+    if (e.relatedTarget) {
+        $(e.relatedTarget).removeClass('active');
+    }
+});    
 
-let a = new Display(1, 'Scarf');
-let b = new Display(2, 'Hat');
-let c = new Display(3, 'Booties');
-let d = new Display(4, 'Slippers');
-let e = new Display(5, 'Hat');
+document.getElementById('addProjectButton').onclick = function(e) {
+	let addInput = document.getElementById('addProjectInput');
+	let title = addInput.value;
+	let     n = 1;
+	let     a = new Display(n, title);
 
-a.render();
-b.render();
-c.render();
-d.render();
-e.render();
+	e.preventDefault();
+
+	a.render();
+	n++;
+
+	addInput.value = '';
+};
+
+
+
