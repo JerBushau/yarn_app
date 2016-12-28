@@ -53,49 +53,30 @@ Display.prototype.render = function() {
 Display.prototype.bindButtons = function(el, pre) {
 	let main = el.querySelector('section.' + pre);
 	let up = main.querySelector('button.' + pre + 'Up');
-	let down = main.querySelector('button.'+ pre +'Down');
+	let down = main.querySelector('button.' + pre +'Down');
 	let clear = main.querySelector('button.' + pre + 'Clear');
 	let number = main.querySelector('div.' + pre + 'Number');
 
-	switch(pre) {
-		case 'row':
-			number.innerText = this.row.currentNumber
-
-			up.onclick = () => {
-				this.row.up();
-				number.innerText = this.row.currentNumber;
-			}
-
-			down.onclick = () => {
-				this.row.down();
-				number.innerText = this.row.currentNumber;
-			}
-
-			clear.onclick = () => {
-				this.row.clear();
-				number.innerText = this.row.currentNumber;
-			}
-
-			break;
-
-		case 'stitch':
-			number.innerText = this.stitch.currentNumber;
-
-			up.onclick = () => {
-				this.stitch.up();
-				number.innerText = this.stitch.currentNumber;
-			}
-
-			down.onclick = () => {
-				this.stitch.down();
-				number.innerText = this.stitch.currentNumber;
-			}
-
-			clear.onclick = () => {
-				this.stitch.clear();
-				number.innerText = this.stitch.currentNumber;
-			}
-
-			break;
+	if (pre === 'row') {
+		pre = this.row;
+	} else if ( pre === 'stitch') {
+		pre = this.stitch;
 	}	
+
+	number.innerText = pre.currentNumber
+
+	up.onclick = () => {
+		pre.up();
+		number.innerText = pre.currentNumber;
+	}
+
+	down.onclick = () => {
+		pre.down();
+		number.innerText = pre.currentNumber;
+	}
+
+	clear.onclick = () => {
+		pre.clear();
+		number.innerText = pre.currentNumber;
+	}
 }
