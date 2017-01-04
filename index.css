@@ -35,7 +35,9 @@ div[class^="widgetContainer"] {
 	margin: 0;
 }
 
-.dropdown-item.active, .dropdown-item.active:focus, .dropdown-item.active:hover {
+.dropdown-item.active,
+.dropdown-item.active:focus,
+.dropdown-item.active:hover {
 	background-color: #c67bfa;
 }
 
@@ -45,7 +47,12 @@ a:hover {
 	/*font-family: 'Sofia', cursive;*/
 }
 
-.nav-pills .nav-item.open .nav-link, .nav-pills .nav-item.open .nav-link:focus, .nav-pills .nav-item.open .nav-link:hover, .nav-pills .nav-link.active, .nav-pills .nav-link.active:focus, .nav-pills .nav-link.active:hover {
+.nav-pills .nav-item.open .nav-link,
+.nav-pills .nav-item.open .nav-link:focus,
+.nav-pills .nav-item.open .nav-link:hover,
+.nav-pills .nav-link.active,
+.nav-pills .nav-link.active:focus,
+.nav-pills .nav-link.active:hover {
 	background-color: #c67bfa;
 }
 

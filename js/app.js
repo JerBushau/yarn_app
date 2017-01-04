@@ -5,8 +5,8 @@ let arrayOfProjects = [];
 let addInput = document.getElementById('addProjectInput');
 let addButton = document.getElementById('addProjectButton');
 
-// bootstrap dropdown active class bug workaround
-$('.nav-pills').on('shown.bs.tab', 'a', function(e) {
+// bootstrap dropdown active class bug 'workaround'
+$('.nav-pills').on('shown.bs.tab', function(e) {
     if (e.relatedTarget) {
         $(e.relatedTarget).removeClass('active');
     }
@@ -36,7 +36,6 @@ addButton.onclick = function(e) {
 		document.getElementById('drpdwn').style.display = 'block';
 	}
 
-	// rewrite in js if possible
 	// remove .active from all current elements
 	$('.active').removeClass('active');
 	$('#' + a.title + a.num).tab('show');

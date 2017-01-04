@@ -63,7 +63,7 @@ Display.prototype.bindButtons = function(el, pre) {
 		pre = this.stitch;
 	}	
 
-	number.innerText = pre.currentNumber
+	number.innerText = pre.currentNumber;
 
 	up.onclick = () => {
 		pre.up();
