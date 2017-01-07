@@ -41,7 +41,7 @@ addButton.onclick = function(e) {
 	$('#' + a.title + a.num).tab('show');
 	// give .active to both toggle button & specific item.
 	$('.dropdown-toggle').addClass('active');
-	$('.dropdown-item[href="#' + a.title + a.num + '"]').addClass('active');
+	$(`.dropdown-item[href="#${a.title}${a.num}"]`).addClass('active');
 
 	addInput.value = '';
 };
