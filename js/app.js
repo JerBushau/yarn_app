@@ -12,7 +12,7 @@ $('.nav-pills').on('shown.bs.tab', function(e) {
     }
 });
 
-// stop page 'reload' when user presses enter while focused on input
+// stop submit when user presses enter while focused on input
 addInput.onkeypress = function(e) {
 	if (e.keyCode === 13) {
 		e.preventDefault();
@@ -21,7 +21,7 @@ addInput.onkeypress = function(e) {
 
 addButton.onclick = function(e) {
 	let title = addInput.value.trim();
-	let a = new Display(n, title);
+	let a = new Project(n, title);
 
 	if (!title) {
 		return false

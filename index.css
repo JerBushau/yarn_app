@@ -28,6 +28,12 @@ div[class^="widgetContainer"] {
 	margin: 1em;
 }
 
+.project-title {
+	display: inline-block;
+	margin-bottom: 1em;
+	border-bottom: 1px solid #5806c3;
+}
+
 .title {
 	font-weight: normal;
 	display: inline-flex;
