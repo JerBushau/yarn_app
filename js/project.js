@@ -5,9 +5,11 @@ function Project(x, title) {
 	this.title = title.replace(/\s+/g, '-');
 	this.row = new Counter();
 	this.stitch = new Counter();
+
 	this.tabLinkHtml = `
-	<a class="dropdown-item" data-toggle="tab" href="#${this.title}${this.num}" 
+	<a class="dropdown-item" data-toggle="pill" href="#${this.title}${this.num}" 
 	role="tab">${title}</a>`; 
+
 	this.tabContentHtml = ` 
 	<div class="widgetContainer${this.num} tab-pane fade" id="${this.title}${this.num}" role="tabpanel">
 		<h1 class="project-title">${title}</h1>
@@ -37,8 +39,8 @@ function Project(x, title) {
 }
 
 Project.prototype.render = function() {
-	let mainContainer = document.getElementById('mainContainer');
-	let nav = document.getElementById('nav');
+	const mainContainer = document.getElementById('mainContainer');
+	const nav = document.getElementById('nav');
 	let widgetCons = mainContainer.getElementsByClassName('widgetContainer' + this.num);
 
 	nav.insertAdjacentHTML('beforeend', this.tabLinkHtml);
