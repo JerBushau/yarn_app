@@ -117,7 +117,3 @@ a:hover {
 .arrow:focus {
 	outline: 0;
 }
-
-.row {
-	display: block;
-}

@@ -13,15 +13,15 @@ function Project(x, title) {
 	this.tabContentHtml = ` 
 	<div class="widgetContainer${this.num} tab-pane fade" id="${this.title}${this.num}" role="tabpanel">
 		<h1 class="project-title">${title}</h1>
-		<section class="row">
+		<section class="_row">
 			<h1 class="title">row</h1>
 			<br>
-			<button class="rowClear clear title">clear</button>
+			<button class="_rowClear clear title">clear</button>
 			<div class="display">
-				<button class="rowDown arrow"><</button>
-				<div class="rowNumber">
+				<button class="_rowDown arrow"><</button>
+				<div class="_rowNumber">
 				</div>
-				<button class="rowUp arrow">></button>
+				<button class="_rowUp arrow">></button>
 			</div>
 		</section>
 		<section class="stitch">
@@ -47,7 +47,7 @@ Project.prototype.render = function() {
 	mainContainer.insertAdjacentHTML('beforeend', this.tabContentHtml);
 
 	for (let i = 0; i < widgetCons.length; i++) {
-		this.bindButtons(widgetCons[i], 'row');
+		this.bindButtons(widgetCons[i], '_row');
 		this.bindButtons(widgetCons[i], 'stitch');
 	}
 }
@@ -59,7 +59,7 @@ Project.prototype.bindButtons = function(el, pre) {
 	let clear = main.querySelector('button.' + pre + 'Clear');
 	let number = main.querySelector('div.' + pre + 'Number');
 
-	if (pre === 'row') {
+	if (pre === '_row') {
 		pre = this.row;
 	} else if ( pre === 'stitch') {
 		pre = this.stitch;
