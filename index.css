@@ -1,60 +1,60 @@
 body, html {
-	height: 100%;
-	background: #E6C5FD;
+  height: 100%;
+  background: #E6C5FD;
 }
 
 section {
-	text-align: center;
+  text-align: center;
 }
 
 #mainContainer {
-	display: flex;
-	background: #E6C5FD;
-	height: 92%;
-	font-family: 'Sofia', cursive;
-	color: #5806c3;
-	max-width: 100%;
-	margin: auto;
-	align-items: center;
-	text-align: center;
+  display: flex;
+  background: #E6C5FD;
+  height: 92%;
+  font-family: 'Sofia', cursive;
+  color: #5806c3;
+  max-width: 100%;
+  margin: auto;
+  align-items: center;
+  text-align: center;
 }
 
 #drpdwn {
-	display: none;
+  display: none;
 }
 
 .tab-pane {
-	width: 100%;
+  width: 100%;
 }
 
 div[class^="widgetContainer"] {
-	width: 100%;
-	margin: 1em;
+  width: 100%;
+  margin: 1em;
 }
 
 .project-title {
-	display: inline-block;
-	margin-bottom: 1em;
-	border-bottom: 1px solid #5806c3;
+  display: inline-block;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #5806c3;
 }
 
 .title {
-	font-weight: normal;
-	display: inline-flex;
-	font-size: 2em;
-	margin: 0;
+  font-weight: normal;
+  display: inline-flex;
+  font-size: 2em;
+  margin: 0;
 }
 
 .dropdown-item:active,
 .dropdown-item.active,
 .dropdown-item.active:focus,
 .dropdown-item.active:hover {
-	background-color: #c67bfa;
+  background-color: #c67bfa;
 }
 
 a,
 a:hover {
-	color: #5806c3;
+  color: #5806c3;
 }
 
 .nav-pills .nav-item.show .nav-link,
@@ -63,57 +63,57 @@ a:hover {
 .nav-pills .nav-link.active,
 .nav-pills .nav-link.active:focus,
 .nav-pills .nav-link.active:hover {
-	background-color: #c67bfa;
+  background-color: #c67bfa;
 }
 
 .input-group {
-	width: 75%;
-	margin: auto;
+  width: 75%;
+  margin: auto;
 }
 
 .clear {
-	font-family: 'Sofia', cursive;
-	background: transparent;
-	border: 0px solid;
-	border-radius: 15px;
-	font-size: 1.5em;
-	padding: 10px;
-	color: #5806c3;
+  font-family: 'Sofia', cursive;
+  background: transparent;
+  border: 0px solid;
+  border-radius: 15px;
+  font-size: 1.5em;
+  padding: 10px;
+  color: #5806c3;
 }
 
 .clear:active {
-	background: #ECD4FD;
+  background: #ECD4FD;
 }
 
 .clear:focus {
-	outline: 0;
+  outline: 0;
 }
 
 .display {
-	font-size: 4em;
-	display: flex;
-	justify-content: space-between;
+  font-size: 4em;
+  display: flex;
+  justify-content: space-between;
 }
 
 .number {
-	margin: .5em;
+  margin: .5em;
 }
 
 .arrow {
-	font-family: 'Sofia', cursive;
-	color: #5806c3;
-	background: #E6C5FD;
-	border:none;
-	border-radius: 60px;
-	width: 100%;
-	max-width: 200px;
-	font-size: 1.233333em;
+  font-family: 'Sofia', cursive;
+  color: #5806c3;
+  background: #E6C5FD;
+  border:none;
+  border-radius: 60px;
+  width: 100%;
+  max-width: 200px;
+  font-size: 1.233333em;
 }
 
 .arrow:active{
-	background: #ECD4FD;
+  background: #ECD4FD;
 }
 
 .arrow:focus {
-	outline: 0;
+  outline: 0;
 }
