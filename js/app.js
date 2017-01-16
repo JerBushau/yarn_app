@@ -31,4 +31,6 @@ addButton.onclick = function(e) {
   }
 
   addInput.value = '';
+
+  $('a[href="#' + project.title + project.num + '"]').tab('show');
 };
