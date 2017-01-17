@@ -41,7 +41,7 @@ function Project(x, title) {
 Project.prototype.render = function() {
   const mainContainer = document.getElementById('mainContainer');
   const nav = document.getElementById('nav');
-  let widgetCons = mainContainer.getElementsByClassName('widgetContainer' + this.num);
+  const widgetCons = mainContainer.getElementsByClassName('widgetContainer' + this.num);
 
   nav.insertAdjacentHTML('beforeend', this.tabLinkHtml);
   mainContainer.insertAdjacentHTML('beforeend', this.tabContentHtml);
@@ -53,11 +53,11 @@ Project.prototype.render = function() {
 }
 
 Project.prototype.bindButtons = function(el, pre) {
-  let main = el.querySelector('section.' + pre);
-  let up = main.querySelector('button.' + pre + 'Up');
-  let down = main.querySelector('button.' + pre +'Down');
-  let clear = main.querySelector('button.' + pre + 'Clear');
-  let number = main.querySelector('div.' + pre + 'Number');
+  const main = el.querySelector('section.' + pre);
+  const up = main.querySelector('button.' + pre + 'Up');
+  const down = main.querySelector('button.' + pre +'Down');
+  const clear = main.querySelector('button.' + pre + 'Clear');
+  const number = main.querySelector('div.' + pre + 'Number');
 
   if (pre === '_row') {
     pre = this.row;

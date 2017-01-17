@@ -14,8 +14,8 @@ addInput.onkeypress = function(e) {
 }
 
 addButton.onclick = function(e) {
-  let title = addInput.value.trim();
-  let project = new Project(n, title);
+  const title = addInput.value.trim();
+  const project = new Project(n, title);
 
   if (!title) {
     return false
