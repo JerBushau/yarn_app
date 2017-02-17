@@ -1,8 +1,20 @@
 'use strict'
 
-function View() {
+function View(storage) {
+  this.s = storage;
   this.mainContainer = document.getElementById('mainContainer');
   this.nav = document.getElementById('nav');
+  this.navDrpdwnBtn = document.getElementById('drpdwn');
+}
+
+View.prototype.drpdwnState = function () {
+  if (this.nav.childElementCount) {
+    this.navDrpdwnBtn.style.display = 'block';
+  }
+}
+
+View.prototype.showCreatedTab = function (obj) {
+  $('a[href="#' + obj.title + obj.num + '"]').tab('show');
 }
 
 View.prototype.render = function (obj) {
@@ -23,7 +35,7 @@ View.prototype.bindButtons = function (el, prefix, obj) {
   const down = main.querySelector('button.' + prefix +'Down');
   const clear = main.querySelector('button.' + prefix + 'Clear');
   const number = main.querySelector('div.' + prefix + 'Number');
-  const index = arrayOfProjects.indexOf(obj);
+  const index = this.s.arrayOfProjects.indexOf(obj);
   let prop;
   
   if (prefix === '_row') {
@@ -37,8 +49,8 @@ View.prototype.bindButtons = function (el, prefix, obj) {
   up.onclick = () => {
     prop++;
     number.innerText = prop;
-    arrayOfProjects[index][prefix] = prop;
-    Lockr.set('projects', arrayOfProjects);
+    this.s.arrayOfProjects[index][prefix] = prop;
+    this.s.saveArray();
   }
 
   down.onclick = () => {
@@ -48,14 +60,14 @@ View.prototype.bindButtons = function (el, prefix, obj) {
 
     prop--;
     number.innerText = prop;
-    arrayOfProjects[index][prefix] = prop;
-    Lockr.set('projects', arrayOfProjects);
+    this.s.arrayOfProjects[index][prefix] = prop;
+    this.s.saveArray();
   }
 
   clear.onclick = () => {
     prop = 0;
     number.innerText = prop;
-    arrayOfProjects[index][prefix] = prop;
-    Lockr.set('projects', arrayOfProjects);
+    this.s.arrayOfProjects[index][prefix] = prop;
+    this.s.saveArray();
   }
 }
