@@ -1,5 +1,7 @@
 'use strict'
 
+// template strings don't work in IE...
+
 function Template(project, title) {
   this.id = `${project.title}${project.num}`;
 

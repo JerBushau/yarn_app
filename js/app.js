@@ -2,21 +2,13 @@
 
 const addInput = document.getElementById('addProjectInput');
 const addButton = document.getElementById('addProjectButton');
-const storage = Lockr.get('projects');
 
-let arrayOfProjects = [];
+const arrayOfProjects = Lockr.get('projects') || [];
 let n = Lockr.get('n') || 0;
 
-if (storage) {
-  for (let i = 0; i < storage.length; i++) {
-    arrayOfProjects.push(storage[i]);
-    render(storage[i]);
-  }
-}
-
-function navLengthCheck() {
-  if (document.getElementById('nav').childElementCount) {
-    document.getElementById('drpdwn').style.display = 'block';
+if (arrayOfProjects) {
+  for (let i = 0; i < arrayOfProjects.length; i++) {
+    render(arrayOfProjects[i]);
   }
 }
 
@@ -37,13 +29,11 @@ addButton.onclick = function(e) {
     return false
   }
 
-  navLengthCheck();
-  console.log(document.getElementById('nav').childElementCount)
-
   arrayOfProjects.push(project);
 
   e.preventDefault();
   render(project);
+  navLengthCheck();
   n++;
 
   Lockr.set('n', n)
@@ -53,6 +43,12 @@ addButton.onclick = function(e) {
 
   $('a[href="#' + project.title + project.num + '"]').tab('show');
 };
+
+function navLengthCheck() {
+  if (document.getElementById('nav').childElementCount) {
+    document.getElementById('drpdwn').style.display = 'block';
+  }
+}
 
 function render(obj) {
   const mainContainer = document.getElementById('mainContainer');
@@ -74,10 +70,9 @@ function bindButtons(el, prefix, obj) {
   const down = main.querySelector('button.' + prefix +'Down');
   const clear = main.querySelector('button.' + prefix + 'Clear');
   const number = main.querySelector('div.' + prefix + 'Number');
+  const index = arrayOfProjects.indexOf(obj);
   let prop;
-
-  let index = arrayOfProjects.indexOf(obj);
-
+  
   if (prefix === '_row') {
     prop = obj._row;
   } else if ( prefix === 'stitch') {
