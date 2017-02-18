@@ -36,7 +36,7 @@ div[class^="widgetContainer"] {
 
 .project-title {
   display: inline-block;
-  margin-bottom: 1em;
+  margin-bottom: .2em;
   border-bottom: 1px solid #5806c3;
 }
 
@@ -93,13 +93,13 @@ a:hover {
 }
 
 .display {
-  font-size: 4em;
+  font-size: 2.5em;
   display: flex;
   justify-content: space-between;
 }
 
 .number {
-  margin: .5em;
+  margin: .2em;
 }
 
 .arrow {
