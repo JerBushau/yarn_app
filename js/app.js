@@ -2,10 +2,11 @@
 
 const addInput = document.getElementById('addProjectInput');
 const addButton = document.getElementById('addProjectButton');
+const clearAllButton = document.getElementById('clearAll');
 const s = new Storage();
 const v = new View(s);
 
-// render and existing projects
+// render any existing projects
 if (s.arrayOfProjects) {
   for (let i = 0; i < s.arrayOfProjects.length; i++) {
     v.render(s.arrayOfProjects[i]);
@@ -15,13 +16,13 @@ if (s.arrayOfProjects) {
 v.drpdwnState();
 
 // stop submit when user presses enter while focused on input
-addInput.onkeypress = function(e) {
+addInput.onkeypress = function (e) {
   if (e.keyCode === 13) {
     e.preventDefault();
   } 
 }
 
-addButton.onclick = function(e) {
+addButton.onclick = function (e) {
   const title = addInput.value.trim();
   const project = new Project(s.n, title);
 
@@ -43,3 +44,7 @@ addButton.onclick = function(e) {
   v.showCreatedTab(project);
 
 };
+
+clearAllButton.onclick = function () {
+  s.scratch();
+}
