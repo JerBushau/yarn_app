@@ -73,7 +73,8 @@ a:hover {
   margin: auto;
 }
 
-.clear {
+.clear, 
+.delete {
   font-family: 'Sofia', cursive;
   background: transparent;
   border: 0px solid;

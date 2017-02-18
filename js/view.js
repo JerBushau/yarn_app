@@ -27,10 +27,11 @@ View.prototype.render = function (obj) {
     this.bindButtons(widgetCons[i], '_row', obj);
     this.bindButtons(widgetCons[i], 'stitch', obj);
   }
-}
+} 
 
 View.prototype.bindButtons = function (el, prefix, obj) {
   const main = el.querySelector('section.' + prefix);
+  const del = el.querySelector('button.delete');
   const up = main.querySelector('button.' + prefix + 'Up');
   const down = main.querySelector('button.' + prefix +'Down');
   const clear = main.querySelector('button.' + prefix + 'Clear');
@@ -45,6 +46,11 @@ View.prototype.bindButtons = function (el, prefix, obj) {
   } 
   
   number.innerText = prop;
+
+  del.onclick = () => {
+    this.s.deleteItem(index);
+    location.reload();
+  }
 
   up.onclick = () => {
     prop++;

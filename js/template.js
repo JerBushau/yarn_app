@@ -34,5 +34,6 @@ function Template(project, title) {
         <button class="stitchUp arrow">></button>
       </div>
     </section>
+    <button class="delete">delete</button>
   </div>`;
 }

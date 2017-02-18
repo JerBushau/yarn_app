@@ -9,6 +9,11 @@ Storage.prototype.saveArray = function () {
   Lockr.set('projects', this.arrayOfProjects);
 }
 
+Storage.prototype.deleteItem = function (index) {
+  this.arrayOfProjects.splice(index, 1);
+  this.saveArray();
+}
+
 Storage.prototype.saveAndIncrementN = function () {
   this.n++
   Lockr.set('n', this.n);
