@@ -13,3 +13,8 @@ Storage.prototype.saveAndIncrementN = function () {
   this.n++
   Lockr.set('n', this.n);
 }
+
+Storage.prototype.scratch = function () {
+  Lockr.flush();
+  location.reload();
+}
