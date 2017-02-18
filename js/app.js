@@ -2,9 +2,17 @@
 
 const addInput = document.getElementById('addProjectInput');
 const addButton = document.getElementById('addProjectButton');
-const arrayOfProjects = [];
+const s = new Storage();
+const v = new View(s);
 
-let n = 1;
+// render and existing projects
+if (s.arrayOfProjects) {
+  for (let i = 0; i < s.arrayOfProjects.length; i++) {
+    v.render(s.arrayOfProjects[i]);
+  }
+}
+
+v.drpdwnState();
 
 // stop submit when user presses enter while focused on input
 addInput.onkeypress = function(e) {
@@ -14,23 +22,24 @@ addInput.onkeypress = function(e) {
 }
 
 addButton.onclick = function(e) {
-  let title = addInput.value.trim();
-  let project = new Project(n, title);
+  const title = addInput.value.trim();
+  const project = new Project(s.n, title);
 
   if (!title) {
     return false
   }
 
-  e.preventDefault();
-  arrayOfProjects.push(project);
-  project.render();
-  n++;
+  s.arrayOfProjects.push(project);
+  s.saveAndIncrementN();
+  s.saveArray();
 
-  if (document.getElementById('nav').children.length > 0) {
-    document.getElementById('drpdwn').style.display = 'block';
-  }
+  v.render(project);
+  v.drpdwnState();
+
+  e.preventDefault();
 
   addInput.value = '';
 
-  $('a[href="#' + project.title + project.num + '"]').tab('show');
+  v.showCreatedTab(project);
+
 };
