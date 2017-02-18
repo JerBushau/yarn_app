@@ -6,7 +6,7 @@ const clearAllButton = document.getElementById('clearAll');
 const s = new Storage();
 const v = new View(s);
 
-// render any existing projects
+// render any existing projects on reload
 if (s.arrayOfProjects) {
   for (let i = 0; i < s.arrayOfProjects.length; i++) {
     v.render(s.arrayOfProjects[i]);

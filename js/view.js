@@ -17,6 +17,7 @@ View.prototype.showCreatedTab = function (obj) {
   $('a[href="#' + obj.title + obj.num + '"]').tab('show');
 }
 
+// maybe draw number in render rather than in bindButtons...
 View.prototype.render = function (obj) {
   const widgetCons = this.mainContainer.getElementsByClassName('widgetContainer' + obj.num);
 
@@ -29,6 +30,8 @@ View.prototype.render = function (obj) {
   }
 } 
 
+// delete is probably getting bound twice...
+// find a better way to bind buttons...
 View.prototype.bindButtons = function (el, prefix, obj) {
   const main = el.querySelector('section.' + prefix);
   const del = el.querySelector('button.delete');
